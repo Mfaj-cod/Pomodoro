@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row w-100 justify-content-center">
+  <div class="col-12 col-lg-8">
+    <div class="glass-card p-3 p-md-4 text-center mb-3">
+      <div class="btn-group switcher mb-3" role="group" aria-label="Mode switcher">
+        <button class="btn btn-switch active" data-mode="pomodoro">Pomodoro</button>
+        <button class="btn btn-switch" data-mode="short_break">Short Break</button>
+        <button class="btn btn-switch" data-mode="long_break">Long Break</button>
+      </div>
+
+      <div class="timer-display my-2" id="time">25:00</div>
+
+      <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+        <button id="startPause" class="btn btn-primary btn-pill px-4 py-2">
+          <i class="bi bi-play-fill"></i> Start
+        </button>
+        <button id="reset" class="btn btn-glass btn-pill px-4 py-2">
+          <i class="bi bi-arrow-counterclockwise"></i> Reset
+        </button>
+        <button id="skip" class="btn btn-glass btn-pill px-4 py-2">
+          <i class="bi bi-skip-end"></i> Skip
+        </button>
+      </div>
+
+      <div class="session-dots mt-3" id="sessionDots"></div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-12 col-lg-7">
+        <div class="glass-card p-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="m-0"><i class="bi bi-list-task"></i> Tasks</h5>
+            <div class="d-flex gap-2">
+              <button id="clearCompleted" class="btn btn-sm btn-glass">Clear Completed</button>
+              <button id="exportTasks" class="btn btn-sm btn-glass">Export</button>
+              <label for="importFile" class="btn btn-sm btn-glass mb-0">Import</label>
+              <input id="importFile" type="file" accept="application/json" hidden/>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <input id="taskInput" class="form-control" placeholder="What are you working on?">
+            <button id="addTask" class="btn btn-primary">Add</button>
+          </div>
+
+          <ul id="taskList" class="list-group list-group-flush"></ul>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-5">
+        <div class="glass-card p-3">
+          <h5><i class="bi bi-graph-up-arrow"></i> Stats</h5>
+          <div class="d-flex justify-content-between">
+            <div>
+              <div class="stat-number" id="statSessions">0</div>
+              <div class="stat-label">Sessions</div>
+            </div>
+            <div>
+              <div class="stat-number" id="statFocus">0m</div>
+              <div class="stat-label">Focus time</div>
+            </div>
+            <div>
+              <div class="stat-number" id="statTasks">0</div>
+              <div class="stat-label">Tasks done</div>
+            </div>
+             <button id="clearStats" class="btn btn-sm btn-glass">Clear</button>
+          </div>
+          <div class="small text-white-50 mt-2">
+            Tip: Stats are stored locally in your browser.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
