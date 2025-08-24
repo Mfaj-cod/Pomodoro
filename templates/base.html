@@ -1,11 +1,9 @@
 {% macro nav(active="timer") -%}
 <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-3">
   <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">
-    <span class="logo-pill">Focus+</span>
+    <span class="logo-pill">Focusly</span>
   </a>
-  <button class="navbar-toggler d-none d-lg-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#navItems">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <a href="" class="btn btn-primary btn-pill">Focus Better, Live Smarter</a>
   <div class="collapse navbar-collapse" id="navItems">
     <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
       <li class="nav-item">
@@ -120,7 +118,7 @@
   <a href="{{ url_for('index') }}" class="nav-link text-white text-center"><i class="bi bi-house fs-5"></i>Home</a>
   <a href="javascript:void(0);" id="openSettings"><i class="bi bi-gear"></i><span>Settings</span></a>
   <a href="javascript:void(0);" id="openTheme"><i class="bi bi-palette"></i><span>Theme</span></a>
-  <a class="nav-link text-white text-center" href="https://github.com/Mfaj-cod" target="_blank" rel="noreferrer">
+  <a class="nav-link text-white text-center" href="https://github.com/Mfaj-cod/Pomodoro" target="_blank" rel="noreferrer">
           <i class="bi bi-github"></i>Star
         </a>
 </nav>
