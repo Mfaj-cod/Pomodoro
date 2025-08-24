@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify
 import os
+from flask import Flask, send_from_directory
 
 app = Flask(__name__)
 
@@ -18,6 +19,10 @@ THEMES = [
     {"id": "candy", "name": "Candy Pop", "class": "theme-candy"},
     {"id": "midnight", "name": "Midnight Pulse", "class": "theme-midnight"}
 ]
+
+@app.route('/manifest.json')
+def manifest():
+    return send_from_directory('static', 'manifest.json')
 
 
 @app.context_processor
