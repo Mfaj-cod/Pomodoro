@@ -140,6 +140,12 @@
           .catch(err => console.error("Service Worker failed:", err));
       }
     </script>
+    <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/static/service-worker.js");
+    }
+    </script>
+
 
   </body>
 </html>
