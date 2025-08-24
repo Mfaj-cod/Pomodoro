@@ -1,13 +1,14 @@
 {
-  "name": "Focusly - Pomodoro Timer",
+  "id": "focusly",
+  "name": "Focusly",
   "short_name": "Focusly",
   "description": "A modern, animated, and responsive Pomodoro timer to boost productivity.",
-  "id": "focusly.app",  
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#1e1e2f",
-  "theme_color": "#6c5ce7",
   "orientation": "portrait",
+  "background_color": "#0d7377",
+  "theme_color": "#00bcd466",
   "icons": [
     {
       "src": "/static/icons/icon-192x192.png",
@@ -20,19 +21,14 @@
       "type": "image/png"
     }
   ],
-  "launch_handler": {
-    "client_mode": "navigate-existing"
-  },
   "screenshots": [
     {
-      "src": "/static/screenshots/screen1.png",
-      "sizes": "540x720",
-      "type": "image/png"
-    },
-    {
-      "src": "/static/screenshots/screen2.png",
-      "sizes": "540x720",
+      "src": "/static/screenshots/home.png",
+      "sizes": "1080x1920",
       "type": "image/png"
     }
-  ]
+  ],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  }
 }
