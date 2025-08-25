@@ -119,15 +119,5 @@
       "protocol": "web+focusly",
       "url": "/?open=%s"
     }
-  ],
-
-  "widgets": [
-    {
-      "name": "Focus Timer",
-      "description": "Start a Pomodoro directly from your home screen.",
-      "src": "/widget/timer.html",
-      "type": "text/html",
-      "sizes": "200x200"
-    }
   ]
 }
