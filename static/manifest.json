@@ -3,32 +3,70 @@
   "name": "Focusly",
   "short_name": "Focusly",
   "description": "A modern, animated, and responsive Pomodoro timer to boost productivity.",
-  "start_url": "/",
+  "lang": "en",
+  "dir": "auto",
+
+  "start_url": "/?source=pwa",
   "scope": "/",
+  "scope_extensions": [
+    { "origin": "https://your-domain.example" }
+  ],
+
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0d7377",
   "theme_color": "#0b1020",
+
+  "categories": ["productivity", "utilities", "education"],
+
   "icons": [
+    { "src": "/static/icons/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/static/icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+
+  "screenshots": [
+    { "src": "/static/screenshots/home.png", "sizes": "1080x1920", "type": "image/png", "form_factor": "narrow" }
+  ],
+
+  "shortcuts": [
     {
-      "src": "/static/icons/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "name": "Start 25-min Focus",
+      "short_name": "Focus 25",
+      "description": "Jump straight into a 25-minute focus session.",
+      "url": "/?mode=focus25",
+      "icons": [{ "src": "/static/icons/shortcut-focus.png", "sizes": "96x96", "type": "image/png" }]
     },
     {
-      "src": "/static/icons/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "name": "Start 5-min Break",
+      "short_name": "Break 5",
+      "description": "Quick 5-minute break.",
+      "url": "/?mode=break5",
+      "icons": [{ "src": "/static/icons/shortcut-break.png", "sizes": "96x96", "type": "image/png" }]
     }
   ],
-  "screenshots": [
+
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [{ "name": "files", "accept": ["text/*"] }]
+    }
+  },
+
+  "launch_handler": { "client_mode": "focus-existing" },
+
+  "prefer_related_applications": false,
+  "related_applications": [
     {
-      "src": "/static/screenshots/home.png",
-      "sizes": "1080x1920",
-      "type": "image/png"
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.example.focusly",
+      "id": "com.example.focusly"
     }
   ],
-  "launch_handler": {
-    "client_mode": "focus-existing"
-  }
+
+  "iarc_rating_id": "YOUR-IARC-RATING-ID"
 }
